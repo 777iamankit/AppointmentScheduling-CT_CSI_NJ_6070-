@@ -1,0 +1,19 @@
+{
+  "name": "finalproject2",
+  "version": "1.0.0",
+  "description": "Final Project for Celebal Technoligies(2025)",
+  "license": "ISC",
+  "author": "Ankit Kumar",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "bcryptjs": "^3.0.2",
+    "express": "^5.1.0",
+    "mongodb": "^6.17.0",
+    "mongoose": "^8.16.2"
+  }
+}
