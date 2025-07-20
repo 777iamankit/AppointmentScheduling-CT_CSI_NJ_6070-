@@ -1,0 +1,32 @@
+body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9fafe; margin: 0; }
+    .header {
+      display: flex; justify-content: space-between; align-items: center;
+      background: #385694; color: #fff; padding: 18px 32px;
+    }
+    .profile, .notif { cursor: pointer; }
+    .container { max-width: 1200px; margin: 32px auto; padding: 24px; background: #fff; border-radius: 12px; box-shadow: 0 3px 12px rgba(56,86,148,0.12);}
+    h2 { margin-top: 0;}
+    .calendar-bar { display: flex; align-items: center; justify-content: space-between;}
+    .calendar-table { width: 100%; border-collapse: collapse; margin-top: 24px;}
+    .calendar-table th, .calendar-table td {
+      border: 1px solid #ededf5; padding: 12px; text-align: center; min-width: 120px;
+    }
+    .event { padding: 6px 10px; border-radius: 6px; color: #fff; margin: 2px 0; font-size: 0.95em;}
+    .event.shift { background: #47a867;}
+    .event.meeting { background: #407ec9;}
+    .event.remote { background: #9c6cb7;}
+    .side-panel {float: right; width: 260px; margin-left: 36px;}
+    .actions { margin: 16px 0;}
+    .actions button { background: #385694; color: #fff; border: none; padding: 8px 18px; border-radius: 6px; cursor: pointer; margin-right: 10px; }
+    .actions button:hover { background: #1c3979;}
+    .notif-list {background: #f3f6fa; border-radius: 8px; padding: 12px;}
+    .notif-list li {font-size: .97em; margin-bottom: 6px;}
+    .modal-bg { display: none; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(0,0,0,0.3); }
+    .modal { position: absolute; top: 20%; left: 50%; transform: translateX(-50%); background: #fff; padding: 28px; border-radius: 10px; width: 320px; }
+    .modal input {width: 90%; padding: 6px;}
+    .modal-actions { margin-top: 16px; text-align: right;}
+    .team-toggle label {margin-right: 10px;}
+    @media (max-width: 900px) {
+      .container, .side-panel {width: 97%; float:none;}
+      .calendar-table th, .calendar-table td {min-width: 70px;}
+    }

@@ -1,0 +1,68 @@
+body {
+            background: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .login-container {
+            max-width: 350px;
+            margin: 60px auto;
+            padding: 2rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: #007bff;
+        }
+        label {
+            display: block;
+            margin-bottom: 0.4rem;
+            font-weight: bold;
+        }
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 0.6rem;
+            margin-bottom: 1.2rem;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .actions a {
+            font-size: 0.95em;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .actions a:hover {
+            text-decoration: underline;
+        }
+        button {
+            width: 100%;
+            background: #007bff;
+            color: #fff;
+            border: none;
+            padding: 0.8rem;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+        .create-account {
+            display: block;
+            text-align: center;
+            margin-top: 1.5rem;
+            color: #333;
+        }
+        .create-account a {
+            color: #007bff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .create-account a:hover {
+            text-decoration: underline;
+        }

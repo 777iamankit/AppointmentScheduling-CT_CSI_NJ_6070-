@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Office Scheduler</title>
+   <link rel="stylesheet" href="../styles/scheduleWeek.css">
+  </head>
+  <body>
+    <div class="header">
+      <div><strong>Office Scheduler</strong></div>
+      <div>
+        <span class="profile">👤</span>
+        <span class="notif" onclick="toggleNotif()">🔔</span>
+      </div>
+    </div>
+    <div class="container">
+      <div class="calendar-bar">
+        <h2>My Schedule (Week)</h2>
+        <div class="team-toggle">
+          <label><input type="checkbox" id="showTeam"> Show Team Overlay</label>
+          <button onclick="showModal()">+ Add Shift/Event</button>
+        </div>
+      </div>
+      <table class="calendar-table">
+        <tr>
+          <th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th>
+        </tr>
+        <tr>
+          <td><div class="event shift">Shift 9AM-5PM</div></td>
+          <td><div class="event remote">Remote Day</div></td>
+          <td><div class="event meeting">Team Mtg 2PM</div></td>
+          <td></td>
+          <td><div class="event shift">Shift 9AM-3PM</div></td>
+        </tr>
+      </table>
+      <div class="actions">
+        <button>Request Time Off</button>
+        <button>Swap Shift</button>
+      </div>
+    </div>
+    <div class="side-panel" id="notifPanel" style="display:none;">
+      <h3>Notifications</h3>
+      <ul class="notif-list">
+        <li>Shift swap approved</li>
+        <li>New team meeting Friday 2PM</li>
+      </ul>
+    </div>
+
+    <div class="modal-bg" id="modalBg">
+      <div class="modal">
+        <h3>Add Shift/Event</h3>
+        <input placeholder="Title (e.g. Shift, Meeting)" /><br /><br />
+        <input placeholder="Day" /><br /><br />
+        <input placeholder="Time" /><br />
+        <div class="modal-actions">
+          <button onclick="closeModal() ">Cancel</button>
+          <button onclick="addEvent()">Add</button>
+        </div>
+      </div>
+    </div>
+    <script>
+    function toggleNotif() {
+      const panel = document.getElementById('notifPanel');
+      panel.style.display = panel.style.display === 'none' ? 'block' : 'none';
+    }
+    function showModal() {
+      document.getElementById('modalBg').style.display = 'block';
+    }
+    function closeModal() {
+      document.getElementById('modalBg').style.display = 'none';
+    }
+  </script>
+  <script src="./scripts/eventHandler.js"></script>
+  </body>
+</html>

@@ -1,0 +1,12 @@
+GET http://localhost:3000/event/events
+
+
+###
+POST http://localhost:3000/event/add-event
+Content-Type: application/json
+
+{
+  "title": "Doctor Appointment",
+  "day": "2025-07-22",
+  "time": "10:00"
+}

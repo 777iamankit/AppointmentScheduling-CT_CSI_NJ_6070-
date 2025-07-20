@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Login Form</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/login.css">
+    </head>
+    <body>
+        <div class="login-container">
+            <h2>Login</h2>
+            <form action="/login" method="post">
+                <label for="email-phone">Email or Phone</label>
+                <input type="text" id="email-phone" name="identifier"
+                    placeholder="Enter email or phone" required>
+
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password"
+                    placeholder="Enter password" required>
+
+                <div class="actions">
+                    <a href="#">Forgot Password?</a>
+                </div>
+
+                <button type="submit">Login</button>
+            </form>
+            <div class="create-account">
+                Don't have an account? <a href="./register.html">Create
+                    Account</a>
+            </div>
+        </div>
+        <script>
+      const params = new URLSearchParams(window.location.search);
+      if (params.get("msg") === "registered") {
+        alert("🎉 Registered Successfully! Please login.");
+      }
+    </script>
+    </body>
+
+</html>

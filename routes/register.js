@@ -24,7 +24,8 @@ router.post('/',async(req,res)=>{
     });
 
     await newUser.save();
-    res.status(200).send('Registered successfully');
+    
+    res.redirect('/views/login.html?msg=registered');
   }catch(error){
     console.log(error);
     res.status(500).send('Server error');
