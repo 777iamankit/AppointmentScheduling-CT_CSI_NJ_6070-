@@ -128,3 +128,29 @@ function loadCalendar() {
 }
 
 
+
+document.getElementById("dashboardLink").addEventListener("click", function(e) {
+  e.preventDefault();
+  loadDashboard();
+});
+
+// public/scripts/profile.js
+
+function loadDashboard() {
+  fetch('/views/dashboard.html')
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector('.main-content').innerHTML = html;
+    })
+    .catch(err => {
+      document.querySelector('.main-content').innerHTML = '<p>Failed to load dashboard.</p>';
+      console.error("Dashboard load error:", err);
+    });
+}
+
+
+
+
+
+
+

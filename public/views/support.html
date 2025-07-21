@@ -1,0 +1,29 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../styles/support.css">
+</head>
+<body>
+
+  <div class="support-container">
+  <div class="support-card">
+    <h2 class="support-title">Support & Help</h2>
+    <p class="support-text">Need assistance? Check our FAQ or contact us below. We're here to help!</p>
+    <form id="supportForm" class="support-form">
+      <label for="supportEmail" class="support-label">Email Address</label>
+      <input type="email" id="supportEmail" class="support-input" required placeholder="Your Email">
+
+      <label for="supportMessage" class="support-label">Message</label>
+      <textarea id="supportMessage" class="support-textarea" required placeholder="Describe your issue..." rows="5"></textarea>
+
+      <button type="submit" class="support-btn" >Send Message</button>
+    </form>
+    <div id="supportResponse" class="support-response"></div>
+  </div>
+</div>
+
+  <script src="./scripts/support.js"></script>
+</body>
+</html>

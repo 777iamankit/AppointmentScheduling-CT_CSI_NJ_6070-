@@ -10,80 +10,82 @@
 
   </head>
   <body>
-<div class="sidebar">
- <h2>My Dashboard</h2>
-  <a href="#" class="nav-item" id="dashboard">Dashboard</a>
-  <a href="#" class="nav-item" id="profileLink">User Profile</a>
-  <a href="./scheduleWeek.html" class="nav-item" >Meeting List</a>
-  <a href="#" class="nav-item"  onclick="loadCalendar()">Calendars</a>
-  <a href="#" class="nav-item notification-trigger">Notifications</a>
-  <a href="#" class="nav-item">Support</a>
-  <a href="#" class="nav-item">Logout</a>
-</div>
+    <div class="sidebar">
+      <h2>My Dashboard</h2>
+      <a href="#dashboard" class="nav-item" id="dashboardLink">Dashboard</a>
+      <a href="#" class="nav-item" id="profileLink">User Profile</a>
+      <a href="./scheduleWeek.html" class="nav-item">Meeting List</a>
+      <a href="#" class="nav-item" onclick="loadCalendar()">Calendars</a>
+      <a href="#" class="nav-item notification-trigger">Notifications</a>
+      <a href="./support.html" class="nav-item">Support</a>
+      <a href="/logout" class="nav-item">Logout</a>
+    </div>
 
+    <div class="main-content">
+      <div class="dashboard-container">
+        <header>
+          <h1>Welcome, <span id="userName"></span></h1>
+        </header>
 
+        <nav>
 
-<div class="main-content">
-  <div class="dashboard-container">
-      <header>
-        <h1>Welcome, <span id="userName"></span></h1>
-      </header>
-      
-    <nav>
-
-      <ul class="dashboard-nav">
-          <li><a href="./scheduleWeek.html">Appointments</a></li>
           <ul class="dashboard-nav">
+            <li><a href="./scheduleWeek.html">Appointments</a></li>
+            <ul class="dashboard-nav">
 
-        <li id="searchMenu" class="nav-menu">
-          <a href="#" id="searchButton">Search</a>
-          <div class="dropdown-panel search-panel" id="searchPanel">
-            <input type="text" id="searchInput" placeholder="Search...">
-            <div id="searchResults"></div>
-          </div>
-        </li>
-        <li id="notificationMenu" class="nav-menu">
-          <a href="#" id="notificationButton" class="notification-trigger">Notifications</a>
-          <div class="dropdown-panel notification-panel" id="notificationPanel">
-            <div id="notificationContents">Loading...</div>
-          </div>
-        </li>
-      </ul>
+              <li id="searchMenu" class="nav-menu">
+                <a href="#" id="searchButton">Search</a>
+                <div class="dropdown-panel search-panel" id="searchPanel">
+                  <input type="text" id="searchInput" placeholder="Search...">
+                  <div id="searchResults"></div>
+                </div>
+              </li>
+              <li id="notificationMenu" class="nav-menu">
+                <a href="#" id="notificationButton"
+                  class="notification-trigger">Notifications</a>
+                <div class="dropdown-panel notification-panel"
+                  id="notificationPanel">
+                  <div id="notificationContents">Loading...</div>
+                </div>
+              </li>
+            </ul>
 
-    <li class="profile-menu" id="profileMenu">
-      <!-- <a href="#" id="profileLink">Profile</a> -->
-      <div id="profileBox" class="profile-box">
-        <img class="profile-pic" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Picture">
-        <div class="profile-name" id="profileName">John Doe</div>
-        <div class="profile-email" id="profileEmail">john.doe@email.com</div>
-        <button class="profile-btn" onclick="showEditForm()">Edit Profile</button>
-        <button class="profile-btn">Settings</button>
-        <a href="/logout" class="logout-button profile-btn logout">Logout</a>
-        <form class="edit-form" id="editForm" onsubmit="saveProfile(event)">
-          <input type="text" id="editName" value="John Doe">
-          <input type="email" id="editEmail" value="john.doe@email.com">
-          <div class="edit-actions">
-            <button type="submit">Save</button>
-            <button type="button" class="cancel-btn" onclick="hideEditForm()">Cancel</button>
-          </div>
-        </form>
+            <li class="profile-menu" id="profileMenu">
+              <!-- <a href="#" id="profileLink">Profile</a> -->
+              <div id="profileBox" class="profile-box">
+                <img class="profile-pic"
+                  src="https://randomuser.me/api/portraits/men/32.jpg"
+                  alt="Profile Picture">
+                <div class="profile-name" id="profileName">John Doe</div>
+                <div class="profile-email"
+                  id="profileEmail">john.doe@email.com</div>
+                <button class="profile-btn" onclick="showEditForm()">Edit
+                  Profile</button>
+                <button class="profile-btn">Settings</button>
+                <a href="/logout"
+                  class="logout-button profile-btn logout">Logout</a>
+                <form class="edit-form" id="editForm"
+                  onsubmit="saveProfile(event)">
+                  <input type="text" id="editName" value="John Doe">
+                  <input type="email" id="editEmail" value="john.doe@email.com">
+                  <div class="edit-actions">
+                    <button type="submit">Save</button>
+                    <button type="button" class="cancel-btn"
+                      onclick="hideEditForm()">Cancel</button>
+                  </div>
+                </form>
+              </div>
+            </li>
+          </ul>
+        </nav>
+
+        <main>
+          <h2>Your Dashboard</h2>
+          <p>This is where your appointment details and actions will appear.</p>
+        </main>
       </div>
-    </li>
-  </ul>
-</nav>
-
-
-
-
-
-
-    <main>
-            <h2>Your Dashboard</h2>
-            <p>This is where your appointment details and actions will appear.</p>
-    </main>
-</div>
-</div>
+    </div>
     <script src="./scripts/profile.js"></script>
-    
+
   </body>
 </html>
