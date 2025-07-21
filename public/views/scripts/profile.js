@@ -89,14 +89,42 @@ document.addEventListener("click", function (e) {
   const searchMenu = document.getElementById("searchMenu");
   const notificationPanel = document.getElementById("notificationMenu");
 
-  const isInsideSearch = searchMenu.contains(target);
-  const isInsideNotification = notificationPanel.contains(target) || target.classList.contains("notification-trigger");
+  const isInsideSearch = searchMenu && searchMenu.contains(target);
+const isInsideNotification = (notificationPanel && notificationPanel.contains(target)) || target.classList.contains("notification-trigger");
 
-  if (!isInsideSearch && !isInsideNotification) {
-    searchMenu.classList.remove("active");
-    notificationPanel.classList.remove("active");
-  }
+  if (searchMenu && !isInsideSearch) {
+  searchMenu.classList.remove("active");
+}
+if (notificationPanel && !isInsideNotification) {
+  notificationPanel.classList.remove("active");
+}
+
 });
 
+function loadCalendar() {
+  fetch('/calendar.html') // calendar.html should contain just the calendar markup
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector('.main-content').innerHTML = html;
+
+      // ✅ Load and initialize calendar.js (only once)
+      if (!window.calendarInitialized) {
+        const script = document.createElement('script');
+        script.src = './scripts/calendar.js'; // adjust if your path is different
+        script.onload = () => {
+          window.calendarInitialized = true;
+        };
+        document.body.appendChild(script);
+      } else {
+        // If already loaded, re-render
+        if (typeof renderMonthCalendar === 'function') renderMonthCalendar();
+        if (typeof renderCurrentWeekSchedule === 'function') renderCurrentWeekSchedule();
+      }
+    })
+    .catch(err => {
+      console.error("Failed to load calendar:", err);
+      document.querySelector('.main-content').innerHTML = `<p>Error loading calendar.</p>`;
+    });
+}
 
 

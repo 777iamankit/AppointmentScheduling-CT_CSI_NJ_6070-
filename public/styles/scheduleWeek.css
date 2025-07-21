@@ -30,3 +30,53 @@ body { font-family: 'Segoe UI', Arial, sans-serif; background: #f9fafe; margin: 
       .container, .side-panel {width: 97%; float:none;}
       .calendar-table th, .calendar-table td {min-width: 70px;}
     }
+
+
+  /* Container under calendar */
+.added-events {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+/* A new row that looks like one in the calendar */
+.event-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  margin: 10px 0;
+}
+
+/* Each day cell */
+.event-cell {
+  min-height: 50px;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Event content wrapper */
+.event-box {
+  padding: 6px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+}
+
+
+
+.workload-graphs {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: nowrap;
+}
+
+.workload-graphs canvas {
+  flex: 1 1 45%;  /* Canvases take about 45% width each */
+  max-width: 45%;
+  height: auto;
+}

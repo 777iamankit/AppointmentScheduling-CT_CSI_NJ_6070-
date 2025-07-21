@@ -1,0 +1,53 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+}
+.calendar-wrapper {
+  background: #fff;
+  padding: 25px 30px;
+  max-width: 800px;
+  margin: 40px auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+#monthCalendar table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+#monthCalendar th, #monthCalendar td {
+  padding: 8px;
+  text-align: center;
+  border: 1px solid #ccc;
+}
+.current-day {
+  background: #4caf50;
+  color: #fff;
+}
+.current-week td {
+  background: #e1f5fe;
+}
+#monthCalendar td:hover {
+  background: #ddd;
+  cursor: pointer;
+}
+#weekSchedule td div {
+  padding: 6px 10px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+  color: white;
+}
+@media (max-width: 600px) {
+  .calendar-wrapper {
+    padding: 10px;
+    width: 98%;
+  }
+  #monthCalendar th, #monthCalendar td {
+    font-size: 0.8rem;
+    padding: 4px;
+  }
+}

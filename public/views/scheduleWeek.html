@@ -18,7 +18,7 @@
       <div class="calendar-bar">
         <h2>My Schedule (Week)</h2>
         <div class="team-toggle">
-          <label><input type="checkbox" id="showTeam"> Show Team Overlay</label>
+          <label><input type="checkbox" id="showTeam" onchange="toggleTeamOverlay(this.checked)"> Show Team Overlay</label>
           <button onclick="showModal()">+ Add Shift/Event</button>
         </div>
       </div>
@@ -35,9 +35,18 @@
         </tr>
       </table>
       <div class="actions">
-        <button>Request Time Off</button>
-        <button>Swap Shift</button>
+        <button onclick="requestTimeOff()">Request Time Off</button>
+        <button onclick="swapShift()">Swap Shift</button>
       </div>
+
+
+      <div class="added-events">
+        <h3>Recently Added Events:</h3>
+        <ul class="event-row" id="eventList">
+          <!-- List items will be added here -->
+        </ul>
+      </div>
+
     </div>
     <div class="side-panel" id="notifPanel" style="display:none;">
       <h3>Notifications</h3>
@@ -59,6 +68,13 @@
         </div>
       </div>
     </div>
+
+
+    <div class="workload-graphs container">
+      <canvas id="workloadBar" width="350" height="250"></canvas>
+      <canvas id="workloadPie" width="250" height="250"></canvas>
+    </div>
+
     <script>
     function toggleNotif() {
       const panel = document.getElementById('notifPanel');
@@ -70,7 +86,15 @@
     function closeModal() {
       document.getElementById('modalBg').style.display = 'none';
     }
+
+    window.onload = function() {
+    toggleTeamOverlay(false);
+  };
+
+
   </script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
   <script src="./scripts/eventHandler.js"></script>
   </body>
 </html>

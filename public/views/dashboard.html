@@ -6,14 +6,16 @@
     <title>User Dashboard</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/calender.css">
+
   </head>
   <body>
 <div class="sidebar">
  <h2>My Dashboard</h2>
   <a href="#" class="nav-item" id="dashboard">Dashboard</a>
   <a href="#" class="nav-item" id="profileLink">User Profile</a>
-  <a href="#" class="nav-item" >Meeting List</a>
-  <a href="#" class="nav-item">Calendars</a>
+  <a href="./scheduleWeek.html" class="nav-item" >Meeting List</a>
+  <a href="#" class="nav-item"  onclick="loadCalendar()">Calendars</a>
   <a href="#" class="nav-item notification-trigger">Notifications</a>
   <a href="#" class="nav-item">Support</a>
   <a href="#" class="nav-item">Logout</a>
@@ -49,7 +51,7 @@
       </ul>
 
     <li class="profile-menu" id="profileMenu">
-      <a href="#" id="profileLink">Profile</a>
+      <!-- <a href="#" id="profileLink">Profile</a> -->
       <div id="profileBox" class="profile-box">
         <img class="profile-pic" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Profile Picture">
         <div class="profile-name" id="profileName">John Doe</div>

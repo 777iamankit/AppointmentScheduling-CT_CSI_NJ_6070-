@@ -37,6 +37,13 @@ const eventRouter = require("./routes/eventRouter.js");
 app.use("/event", eventRouter); // or `app.use("/events", eventRouter);`
 
 
+
+app.get('/calendar.html', (req, res) => {
+  res.sendFile(path.join(__dirname,'public', 'views', 'calendar.html'));
+});
+
+
+
 app.listen(3000, () => {
   console.log(`Server is listening on port 3000`);
 });
