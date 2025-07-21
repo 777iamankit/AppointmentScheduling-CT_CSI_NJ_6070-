@@ -10,3 +10,7 @@ Content-Type: application/json
   "day": "2025-07-22",
   "time": "10:00"
 }
+
+
+###
+GET http://localhost:3000/api/events

@@ -43,6 +43,13 @@ app.get('/calendar.html', (req, res) => {
 });
 
 
+const eventListRouter = require('./routes/eventList.js'); // adjust path
+app.use('/api/events', eventListRouter);
+
+
+
+
+
 
 app.listen(3000, () => {
   console.log(`Server is listening on port 3000`);

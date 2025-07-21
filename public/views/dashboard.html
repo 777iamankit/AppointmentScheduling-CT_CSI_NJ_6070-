@@ -80,8 +80,32 @@
         </nav>
 
         <main>
-          <h2>Your Dashboard</h2>
-          <p>This is where your appointment details and actions will appear.</p>
+          <div class="event-section-container">
+              <h2 class="event-section-title">Your Schedule</h2>
+
+              <!-- Switch Buttons -->
+              <div class="event-toggle-buttons">
+                <button id="toggle-upcoming" class="toggle-btn active">Upcoming</button>
+                <button id="toggle-past" class="toggle-btn">Past</button>
+              </div>
+
+              <!-- Scrollable Sections -->
+              <div class="event-content">
+
+                <!-- UPCOMING SCROLL LIST -->
+                <div class="event-list-wrapper upcoming-section">
+                  <div class="event-scroll-area upcoming-scroll"></div>
+                </div>
+
+                <!-- PAST SCROLL LIST -->
+                <div class="event-list-wrapper past-section hidden">
+                  <div class="event-scroll-area past-scroll"></div>
+                </div>
+
+              </div>
+            </div>
+
+
         </main>
       </div>
     </div>

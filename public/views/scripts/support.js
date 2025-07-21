@@ -1,3 +1,6 @@
+function  supportMessage(){
+  alert('Information sent successfully wait for the response!');
+}
 
 
 document.addEventListener("DOMContentLoaded", function () {

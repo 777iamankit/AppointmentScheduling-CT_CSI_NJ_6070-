@@ -151,6 +151,57 @@ function loadDashboard() {
 
 
 
+document.addEventListener("DOMContentLoaded", () => {
+  const upcomingBtn = document.getElementById("toggle-upcoming");
+  const pastBtn = document.getElementById("toggle-past");
+
+  const upcomingSection = document.querySelector(".upcoming-section");
+  const pastSection = document.querySelector(".past-section");
+
+  const upcomingContainer = document.querySelector(".upcoming-scroll");
+  const pastContainer = document.querySelector(".past-scroll");
+
+  // Fetch events once
+  fetch("/api/events")
+    .then(res => res.json())
+    .then(data => {
+      data.forEach(event => {
+        const card = `
+          <div class="event-card">
+            <div class="event-title">${event.title}</div>
+            <div class="event-date">${event.date}</div>
+          </div>
+        `;
+
+        if (event.type === "upcoming") {
+          upcomingContainer.innerHTML += card;
+        } else {
+          pastContainer.innerHTML += card;
+        }
+      });
+    });
+
+  // Toggle behavior
+  upcomingBtn.addEventListener("click", () => {
+    upcomingBtn.classList.add("active");
+    pastBtn.classList.remove("active");
+    upcomingSection.classList.remove("hidden");
+    pastSection.classList.add("hidden");
+  });
+
+  pastBtn.addEventListener("click", () => {
+    pastBtn.classList.add("active");
+    upcomingBtn.classList.remove("active");
+    pastSection.classList.remove("hidden");
+    upcomingSection.classList.add("hidden");
+  });
+});
+
+
+
+
+
+
 
 
 
