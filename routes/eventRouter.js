@@ -25,4 +25,18 @@ router.get('/events', async (req, res) => {
   }
 });
 
+
+const Event = require('../models/Event');
+
+// DELETE /api/events/:id
+router.delete('/:id', async (req, res) => {
+  try {
+    await Event.findByIdAndDelete(req.params.id);
+    res.json({ message: "Appointment deleted successfully." });
+  } catch (err) {
+    res.status(500).json({ error: "Failed to delete appointment." });
+  }
+});
+
+
 module.exports = router;

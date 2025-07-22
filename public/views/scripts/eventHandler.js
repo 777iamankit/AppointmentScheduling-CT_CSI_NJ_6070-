@@ -238,3 +238,19 @@ const workloadPie = new Chart(pieCtx, {
 });
 
 
+function deleteAppointment(id) {
+  if (!confirm("Are you sure you want to delete this appointment?")) return;
+
+  fetch(`/api/events/${id}`, {
+    method: "DELETE",
+  })
+    .then((res) => res.json())
+    .then((result) => {
+      alert(result.message || "Appointment deleted.");
+      location.reload(); // Refresh list after deletion
+    })
+    .catch((err) => {
+      console.error("Failed to delete appointment:", err);
+      alert("Failed to delete appointment.");
+    });
+}
