@@ -1,19 +1,104 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Monthly Calendar</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #92fe9d, #00c9ff);
+      display: flex;
+      /* justify-content: center; */
+      /* align-items: center; */
+      min-height: 100vh;
+    }
+
+    .calendar-wrapper {
+      background-color: #ffffff;
+      padding: 2rem 2.5rem;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
+      animation: fadeIn 0.8s ease;
+    }
+
+    h2 {
+      color: #273c75;
+      margin-bottom: 1rem;
+      font-size: 1.6rem;
+    }
+
+    h3 {
+      color: #0097e6;
+      margin-top: 2rem;
+      font-size: 1.3rem;
+    }
+
+    .instruction {
+      font-style: italic;
+      color: #444;
+      font-size: 1rem;
+      margin-top: -0.5rem;
+      margin-bottom: 1.5rem;
+      background-color: #f0f8ff;
+      border-left: 4px solid #00c9ff;
+      padding: 0.75rem 1rem;
+      border-radius: 8px;
+    }
+
+    #monthCalendar,
+    #weekSchedule {
+      border: 2px dashed #00aaff;
+      border-radius: 10px;
+      background: #f9f9f9;
+      padding: 1rem;
+      min-height: 120px;
+      margin-top: 1rem;
+    }
+
+    #monthCalendar:hover {
+      background-color: #e9faff;
+      cursor: pointer;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
 </head>
 <body>
+
   <!-- calendar.html -->
-<div class="calendar-wrapper">
-  <h2>Monthly Calendar</h2>
-  <div id="monthCalendar"></div>
-  <h3>This Week’s Events</h3>
-  <div id="weekSchedule"></div>
-</div>
+  <div class="calendar-wrapper">
+    <h2>📅 Monthly Calendar</h2>
+    <div class="instruction">
+      <strong>➡️ Double-click the calendar section over the sidebar to view your monthly schedule.</strong>
+    </div>
+
+    <div id="monthCalendar" ondblclick="alert('Your monthly schedule appears here!')">
+      <!-- Calendar will be rendered here via JS -->
+       <h2>currently empty double tap on calenders over sidebar</h2>
+    </div>
+
+    <h3>🗓️ This Week’s Events</h3>
+    <div id="weekSchedule">
+      <!-- Weekly events loaded here -->
+       <h2>currently empty double tap on calenders over sidebar</h2>
+    </div>
+  </div>
+
   <script src="/scripts/calendar.js"></script>
-
-
 </body>
 </html>
