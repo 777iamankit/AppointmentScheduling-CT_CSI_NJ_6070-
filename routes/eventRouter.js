@@ -26,7 +26,7 @@ router.get('/events', async (req, res) => {
 });
 
 
-const Event = require('../models/Event');
+// const Event = require('../models/Event');
 
 // DELETE /api/events/:id
 router.delete('/:id', async (req, res) => {
